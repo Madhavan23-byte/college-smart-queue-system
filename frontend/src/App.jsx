@@ -3,7 +3,7 @@ import axios from "axios";
 import logo from "./assets/cit-logo.png";
 import "./App.css";
 
-const API_URL = "http://localhost:6001";
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:6001";
 
 function App() {
   const [activeTab, setActiveTab] = useState("login");

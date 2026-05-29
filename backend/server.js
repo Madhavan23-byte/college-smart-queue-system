@@ -30,6 +30,10 @@ app.use("/api/requests", requestRoutes);
 
 const PORT = process.env.PORT || 6001;
 
-app.listen(PORT, () => {
-  console.log(`College Smart Queue Backend running on http://localhost:${PORT}`);
-});
+if (process.env.NODE_ENV !== "production") {
+  app.listen(PORT, () => {
+    console.log(`College Smart Queue Backend running on http://localhost:${PORT}`);
+  });
+}
+
+module.exports = app;
